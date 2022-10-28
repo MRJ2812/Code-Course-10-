@@ -5,10 +5,9 @@ const Footer = () => {
     return (
         <div>
             <footer>
-                <div className="bg-dark text-center text-white p-5">
-                    <h2>Learning Hub</h2>
-                    <p><small>Office 41, Chowmuhani, Noakhali.</small></p>
-                    <p><small>Vhuiyan Tower</small></p>
+                <div className="bg-dark text-center text-white p-3">
+                    <h2>Code Course</h2>
+                    <p><small>Dhaka, Bangladesh</small></p>
                     <p><small>Privacy Ploicy  |   Terms of use</small></p>
                     <p className="m-4">
                         <a href="www.facebook.com" className="p-4"><FaFacebook></FaFacebook></a>
