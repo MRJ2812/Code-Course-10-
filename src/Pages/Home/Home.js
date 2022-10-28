@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import banare1 from '../../Assets/imaiges/banare22.png';
-import banare2 from '../../Assets/imaiges/banare111.webp';
-import banare3 from '../../Assets/imaiges/banare333.jpeg';
+import banare1 from '../../Assets/imaiges/banare111.png';
+import banare2 from '../../Assets/imaiges/banare22.png';
+import banare3 from '../../Assets/imaiges/banare333.png';
 import { useLoaderData } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
