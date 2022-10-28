@@ -55,30 +55,23 @@ const Home = () => {
                     </Carousel.Item>
                 </Carousel>
             </div>
-            <div >
-                <h2>courses:{CourseDetails.length} </h2>
-
+            <div className='row g-2'>
                 {
-                    CourseDetails.map(CourseDetails => <p key={CourseDetails.id}>
-                        <div className='row g-2'>
-                            <div className='my-4 col-lg-3 col-md-6 col-sm-12'>
-                                <Card style={{ width: '18rem' }}>
-                                    <Card.Img variant="top" src={CourseDetails.image} />
-                                    <Card.Body>
-                                        <Card.Title>{CourseDetails.CourseTitle}</Card.Title>
-                                        <Card.Text>
+                    CourseDetails.map(CourseDetails =>
+                        <div key={CourseDetails.id} className='my-4 col-lg-3 col-12 col-md-6'>
+                            <Card style={{ width: '15rem' }}>
+                                <Card.Img variant="top" src={CourseDetails.image} />
+                                <Card.Body>
+                                    <Card.Title>{CourseDetails.CourseTitle}</Card.Title>
+                                    <Card.Text>
 
-                                        </Card.Text>
-                                        <Button variant="primary">Details</Button>
-                                    </Card.Body>
-                                </Card>
-                            </div>
+                                    </Card.Text>
+                                    <Button variant="primary">Details</Button>
+                                </Card.Body>
+                            </Card>
                         </div>
-                    </p>)
-
-
+                    )
                 }
-
             </div>
 
         </div>
