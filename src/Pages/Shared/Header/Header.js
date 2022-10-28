@@ -24,15 +24,17 @@ const Header = () => {
     return (
         <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
             <Container>
-                <Navbar.Brand href="#home">Code Course</Navbar.Brand>
+                <Navbar.Brand className='text-primary font-weight-bold' href="#home">Code Course</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link><Button variant="outline-info"><Link className='text-decoration-none' to='/'>Home</Link></Button></Nav.Link>
-                        <Nav.Link><Button variant="outline-info"><Link className='text-decoration-none' to='/courses'>Courses</Link></Button></Nav.Link>
-                        <Nav.Link><Button variant="outline-info"><Link className='text-decoration-none' to='/blog'>Q/A</Link></Button></Nav.Link>
-                        {/* <Nav.Link><Link to='/courses'>Courses</Link></Nav.Link>
-                        <Nav.Link><Link to='/blog'>Q/A</Link></Nav.Link> */}
+
+                        <Nav.Link><Link className='text-decoration-none' to='/'><Button variant="outline-info">Home</Button></Link></Nav.Link>
+                        <Nav.Link><Link className='text-decoration-none' to='/courses'><Button variant="outline-info">Courses</Button></Link></Nav.Link>
+                        <Nav.Link><Link className='text-decoration-none' to='/blog'><Button variant="outline-info">Q/A</Button></Link></Nav.Link>
+
+                        {/* <Nav.Link><Button variant="outline-info"><Link className='text-decoration-none' to='/courses'>Courses</Link></Button></Nav.Link>
+                        <Nav.Link><Button variant="outline-info"><Link className='text-decoration-none' to='/blog'>Q/A</Link></Button></Nav.Link> */}
 
                     </Nav>
                     <Nav>
