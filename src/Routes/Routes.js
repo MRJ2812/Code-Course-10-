@@ -40,5 +40,10 @@ export const routes = createBrowserRouter([
                 element: <Register></Register>
             }
         ]
+    },
+    {
+        path: '/*',
+        element: "Sorry! Page Not Found"
     }
+
 ])
