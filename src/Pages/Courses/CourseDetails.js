@@ -12,7 +12,7 @@ const CourseDetails = () => {
 
     const course = useLoaderData();
     return (
-        <div className='m-4 p-4 container'>
+        <div className='m-4 p-4 container text-center'>
             <Card>
                 <div>
                     <button onClick={handlePrint} className="print__button">  Print </button>

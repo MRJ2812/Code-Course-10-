@@ -8,17 +8,16 @@ const SideNav = () => {
 
     useEffect(() => {
         fetch('http://localhost:5004/courseinfo')
-        .then(res => res.json())
-        .then(data => setCourseinfo(data));
+            .then(res => res.json())
+            .then(data => setCourseinfo(data));
     }, [])
 
     return (
         <div>
-            <h2>Courses: {courseinfo.length}</h2>
             <div>
                 {
                     courseinfo.map(courses => <p key={courses.id}>
-                        <Link  to={`/courses/${courses.id}`}>{courses.name}</Link>
+                        <Link to={`/courses/${courses.id}`}>{courses.name}</Link>
                     </p>)
                 }
             </div>

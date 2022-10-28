@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { useLoaderData } from 'react-router-dom';
 import SideNav from './SideNav/SideNav';
@@ -6,6 +6,14 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 const Courses = () => {
+
+    const [courseinfo, setCourseinfo] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5004/courseinfo')
+            .then(res => res.json())
+            .then(data => setCourseinfo(data));
+    }, [])
 
     const CourseDetails = useLoaderData();
 
@@ -29,7 +37,7 @@ const Courses = () => {
                                             <Card.Text>
 
                                             </Card.Text>
-                                            <Button variant="primary">Details</Button>
+                                            <Button variant="primary" to={`/courses/${CourseDetails.id}`}>Details</Button>
                                         </Card.Body>
                                     </Card>
                                 </div>
