@@ -5,6 +5,7 @@ import { useReactToPrint } from "react-to-print";
 
 const CourseDetails = () => {
 
+
     const componentRef = useRef();
     const handlePrint = useReactToPrint({
         content: () => componentRef.current,
@@ -37,10 +38,10 @@ const CourseDetails = () => {
                 </div>
                 <div className=''>
                     <h2>{course.CourseTitle}</h2>
-                    {/* <Card.Img variant="top" src={course.image} /> */}
+                    <img className='w-25' src={course.image} alt="" />
                     <h5>{course.courseBody}</h5>
-
                 </div>
+
             </Card>
         </div>
     );

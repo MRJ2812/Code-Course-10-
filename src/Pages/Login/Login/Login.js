@@ -6,7 +6,7 @@ import { FaGithub, FaGoogle, FaMailBulk } from "react-icons/fa";
 import { useContext } from 'react';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Card } from 'react-bootstrap';
 
 const Login = () => {
@@ -58,23 +58,30 @@ const Login = () => {
                 <Form onSubmit={handleSubmit}>
                     <Form.Group className="m-3" controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>
-                        <Form.Control type="email" placeholder="Enter email" required />
+                        <Form.Control name="email" type="email" placeholder="Enter email" required />
 
                     </Form.Group>
 
                     <Form.Group className="m-3" controlId="formBasicPassword">
                         <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" placeholder="Password" required />
+                        <Form.Control name="password" type="password" placeholder="Password" required />
                     </Form.Group>
 
-                    <Button variant="primary" type="submit">
-                        Login
-                    </Button>
+                    <div className='ms-3'>
+                        <Button variant="primary" type="submit">
+                            Login
+                        </Button>
+                    </div>
+
+                    <div className='ms-3'>
+                        <Link to='/register'>Cerate an account</Link>
+                    </div>
+
 
                     <div>
                         <ButtonGroup>
-                            <Button onClick={handleGoogleLogin} className='m-3 rounded' variant="outline-primary"><FaGoogle></FaGoogle>Login with Google</Button>
-                            <Button onClick={handleGitHubLogin} className='m-3 rounded' variant="outline-dark"><FaGithub></FaGithub>Login with GitHub</Button>
+                            <Button onClick={handleGoogleLogin} className='m-3 rounded' variant="outline-primary"><FaGoogle></FaGoogle> Login with Google</Button>
+                            <Button onClick={handleGitHubLogin} className='m-3 rounded' variant="outline-dark"><FaGithub></FaGithub> Login with GitHub</Button>
                         </ButtonGroup>
                     </div>
                 </Form>

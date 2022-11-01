@@ -1,21 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import SideNav from './SideNav/SideNav';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 const Courses = () => {
 
-    const [courseinfo, setCourseinfo] = useState([]);
+    // const [courseinfo, setCourseinfo] = useState([]);
 
-    useEffect(() => {
-        fetch('http://localhost:5004/courseinfo')
-            .then(res => res.json())
-            .then(data => setCourseinfo(data));
-    }, [])
+    // console.log("info", courseinfo)
+
+    // useEffect(() => {
+    //     fetch('http://localhost:5004/courseinfo')
+    //         .then(res => res.json())
+    //         .then(data => setCourseinfo(data));
+    // }, [])
 
     const CourseDetails = useLoaderData();
+
+
 
     return (
         <div>
@@ -28,16 +32,13 @@ const Courses = () => {
 
                     <div className='row g-2'>
                         {
-                            CourseDetails.map(CourseDetails =>
-                                <div key={CourseDetails.id} className='my-4  col-lg-4 col-12 col-md-6'>
+                            CourseDetails.map(CourseDetail =>
+                                <div key={CourseDetail.id} className='my-4  col-lg-4 col-12 col-md-6'>
                                     <Card style={{ width: '18rem' }}>
-                                        <Card.Img variant="top" src={CourseDetails.image} />
+                                        <Card.Img variant="top" src={CourseDetail.image} />
                                         <Card.Body>
-                                            <Card.Title>{CourseDetails.CourseTitle}</Card.Title>
-                                            <Card.Text>
-
-                                            </Card.Text>
-                                            <Button variant="primary" to={`/courses/${CourseDetails.id}`}>Details</Button>
+                                            <Card.Title>{CourseDetail.CourseTitle}</Card.Title>
+                                            <Button variant="primary"><Link className='text-white' to={`/courses_details/${CourseDetail.id}`}>Details</Link></Button>
                                         </Card.Body>
                                     </Card>
                                 </div>

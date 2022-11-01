@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import { Card } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 const Register = () => {
@@ -34,8 +35,8 @@ const Register = () => {
                 <h2 className='p-4'>Please Register...!!</h2>
                 <Form onSubmit={handleSubmit}>
                     <Form.Group className="m-3" controlId="formBasicEmail">
-                        <Form.Label>Your Name</Form.Label>
-                        <Form.Control name="name" type="text" placeholder="Enter Your Name" required />
+                        <Form.Label>Full Name</Form.Label>
+                        <Form.Control name="name" type="text" placeholder="Enter Your Full Name" required />
                     </Form.Group>
                     <Form.Group className="m-3" controlId="formBasicEmail">
                         <Form.Label>Photo URL</Form.Label>
@@ -43,17 +44,21 @@ const Register = () => {
                     </Form.Group>
                     <Form.Group className="m-3" controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>
-                        <Form.Control name="email" type="email" placeholder="Enter email" required />
+                        <Form.Control name="email" type="email" placeholder="email address" required />
                     </Form.Group>
 
                     <Form.Group className="m-3" controlId="formBasicPassword">
                         <Form.Label>Password</Form.Label>
-                        <Form.Control name="password" type="password" placeholder="Password" required />
+                        <Form.Control name="password" type="password" placeholder="password" required />
                     </Form.Group>
 
                     <Button className='m-4' variant="primary" type="submit">
                         Register
                     </Button>
+
+                    <div>
+                        <Link className='ms-3' to='/logIn'>Already have an account</Link>
+                    </div>
                 </Form>
 
             </Card>
