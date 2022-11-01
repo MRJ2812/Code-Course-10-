@@ -33,7 +33,7 @@ const Header = () => {
 
                         <Nav.Link><Link className='text-decoration-none' to='/'><Button variant="outline-info">Home</Button></Link></Nav.Link>
                         <Nav.Link><Link className='text-decoration-none' to='/courses'><Button variant="outline-info">Courses</Button></Link></Nav.Link>
-                        <Nav.Link><Link className='text-decoration-none' to='/FAQ'><Button variant="outline-info">FQA</Button></Link></Nav.Link>
+                        {/* <Nav.Link><Link className='text-decoration-none' to='/FAQ'><Button variant="outline-info">FQA</Button></Link></Nav.Link> */}
                         <Nav.Link><Link className='text-decoration-none' to='/blog'><Button variant="outline-info">Blog</Button></Link></Nav.Link>
 
                         {/* <Nav.Link><Button variant="outline-info"><Link className='text-decoration-none' to='/courses'>Courses</Link></Button></Nav.Link>

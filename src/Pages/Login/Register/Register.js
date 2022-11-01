@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useContext } from 'react';
 import { Card } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 const Register = () => {
+
+    const [errormsg, setError] = useState();
 
     const { createUser } = useContext(AuthContext)
 
@@ -25,7 +27,7 @@ const Register = () => {
                 console.log(user);
                 form.reset();
             })
-            .catch(error => console.error(error))
+            .catch(error => setError(error.message))
     }
 
     return (
@@ -55,6 +57,12 @@ const Register = () => {
                     <Button className='m-4' variant="primary" type="submit">
                         Register
                     </Button>
+
+                    <div>
+                        {
+                            <p className='ms-3 mt-2 text-danger'>{errormsg}</p>
+                        }
+                    </div>
 
                     <div>
                         <Link className='ms-3' to='/logIn'>Already have an account</Link>

@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { Card } from 'react-bootstrap';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import { useReactToPrint } from "react-to-print";
 
 const CourseDetails = () => {
@@ -12,17 +12,19 @@ const CourseDetails = () => {
     });
 
     const course = useLoaderData();
+    console.log(course.id)
+
     return (
         <div className='m-4 p-4 container text-center'>
             <Card>
                 <div>
                     <button onClick={handlePrint} className="print__button">  Print </button>
                     <div ref={componentRef} className="card">
-                        <div class="float__start">
-                            <h3 class="card-title mb-0">Information</h3>
+                        <div className="float__start">
+                            <h3 className="card-title mb-0">Information</h3>
                         </div>
                         <hr />
-                        <div class="float__infoss">
+                        <div className="float__infoss">
                             <ul>
                                 <li> Name : <span> Dr Andrew C S Koh </span> </li>
                                 <li> Email : <span> Andrew@gmail.com </span> </li>
@@ -40,6 +42,10 @@ const CourseDetails = () => {
                     <h2>{course.CourseTitle}</h2>
                     <img className='w-25' src={course.image} alt="" />
                     <h5>{course.courseBody}</h5>
+                </div>
+
+                <div>
+                    <Link to={`/premium/${course.id}`}><button type="button" className="mt-3 mb-3 btn btn-warning btn-lg">Get Premium Access</button></Link>
                 </div>
 
             </Card>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
@@ -10,6 +10,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Card } from 'react-bootstrap';
 
 const Login = () => {
+
+    const [errormsg, setError] = useState();
 
     const { ProviderLogin, signIn } = useContext(AuthContext);
     const navigate = useNavigate();
@@ -27,8 +29,10 @@ const Login = () => {
                 form.reset();
                 navigate('/')
             })
-            .catch(error => console.error(error))
+            .catch(error => setError(error.message))
     }
+
+    console.log(errormsg)
 
     //Google signIn
     const googleProvider = new GoogleAuthProvider()
@@ -75,6 +79,12 @@ const Login = () => {
 
                     <div className='ms-3'>
                         <Link to='/register'>Cerate an account</Link>
+                    </div>
+
+                    <div>
+                        {
+                            <p className='ms-3 mt-2 text-danger'>{errormsg}</p>
+                        }
                     </div>
 
 
