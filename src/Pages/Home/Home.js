@@ -19,7 +19,7 @@ const Home = () => {
 
     return (
         <div>
-            <div>
+            <div className='mb-5'>
                 <Carousel activeIndex={index} onSelect={handleSelect}>
                     <Carousel.Item>
                         <img
@@ -45,7 +45,7 @@ const Home = () => {
                     </Carousel.Item>
                 </Carousel>
             </div>
-            <div className='row g-2'>
+            {/* <div className='row g-2'>
                 {
                     CourseDetails.map(CourseDetails =>
                         <div key={CourseDetails.id} className='my-4  col-lg-3 col-12 col-md-6'>
@@ -62,7 +62,7 @@ const Home = () => {
                         </div>
                     )
                 }
-            </div>
+            </div> */}
 
         </div>
     );

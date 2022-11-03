@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useContext } from 'react';
 import { Button, Image } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
@@ -14,6 +14,9 @@ import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 const Header = () => {
 
     const { user, logOut } = useContext(AuthContext);
+    const [dark, setDark] = useState(false);
+
+    console.log(user)
 
     const handleLogOut = () => {
         logOut()
@@ -57,7 +60,11 @@ const Header = () => {
 
                             } <span> </span>
 
-                            <Button variant="dark">Dark Mode</Button>
+                            {
+                                dark === true ? <Button onClick={() => setDark(false)} variant="dark">Light Mode</Button> : <Button onClick={() => setDark(true)} variant="dark">Dark Mode</Button>
+                            }
+
+
 
                         </Nav.Link>
                         <Nav.Link eventKey={2} href="#memes">

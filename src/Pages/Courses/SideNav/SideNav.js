@@ -7,7 +7,7 @@ const SideNav = () => {
     const [courseinfo, setCourseinfo] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5004/courseinfo')
+        fetch('https://code-course-server.vercel.app/courseinfo')
             .then(res => res.json())
             .then(data => setCourseinfo(data));
     }, [])
